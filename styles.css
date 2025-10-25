@@ -1,0 +1,108 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial; color:var(--tinta); background:var(--fondo)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.contenedor{max-width:1080px;margin:0 auto;padding:0 16px}
+
+/* NAV */
+.barra-superior{background:#fede58;}
+.navegacion{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+.marca{display:flex;gap:10px;align-items:center}
+.marca img{height:28px;width:auto;border-radius:6px}
+.menu{display:flex;gap:22px}
+.menu a{font-weight:700;font-size:.95rem;text-transform:lowercase;opacity:.95}
+.menu a:hover{opacity:1;text-decoration:underline}
+
+/* PORTADA */
+.portada{position:relative;isolation:isolate}
+.imagen-fondo{width:100%;height:900px;object-fit:cover;filter:contrast(1) saturate(1) brightness(.95)}
+.velo{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.35));z-index:0}
+.envoltura-titulo{position:absolute;inset:0;display:grid;place-items:center;z-index:1}
+.titulo{width:min(850px,92vw);display:grid;grid-template-columns:1fr;row-gap:10px;color:#fff}
+.titulo h1{margin:0;line-height:.9;font-size:clamp(48px, 9.5vw, 120px);font-weight:800;letter-spacing:.02em}
+
+/* FRANJA */
+.cinta{height:40px;background:#fede58}
+
+/* SECCIONES GENERALES */
+.seccion{padding:38px 0}
+.seccion h2{font-size:clamp(24px,3.2vw,30px);letter-spacing:.08em;text-transform:uppercase;text-align:center;margin:0 0 22px;font-weight:800}
+
+/* NOSOTROS */
+.nosotros{background:#0cc0df;padding-top: 100px;padding-bottom: 100px;}
+#titulo_nosotros{color:black;margin-top: -50px;margin-bottom: 50px;}
+.rejilla{display:grid;grid-template-columns:1.1fr 1.6fr;gap:24px;align-items:start}
+.tarjeta{background:#e7fbff;;border-radius:14px;padding:20px;box-shadow:0 10px 24px rgba(0,0,0,.06)}
+.nosotros p{margin:0;line-height:2.1;background:#e7fbff;padding:14px 16px;text-align: justify;border-radius:14px;jubox-shadow:0 10px 24px rgba(0,0,0,.06)}
+
+/* === SERVICIOS con PNG === */
+.servicios{background:#0cc0df;}
+.servicios h2{color:#072a31}
+.iconos{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  place-items:center;
+}
+
+/* Tarjeta */
+.servicio{
+  display:grid;
+  place-items:center;
+  gap:8px;
+  text-align:center;
+  color:#072a31;
+}
+
+/* “Pastilla” circular para emular el look de los SVG */
+.servicio .icono-badge{
+  width:140px;
+  height:140px;
+  border-radius:999px;
+  background:#e7fbff;            /* círculo celeste claro */
+  display:grid;
+  place-items:center;
+  box-shadow:0 10px 24px rgba(0,0,0,.06);
+}
+
+/* Imagen PNG dentro de la pastilla */
+.servicio .icono{
+  width:100px;                    /* ajusta según tu PNG */
+  height:100px;
+  object-fit:contain;             /* no deforma el PNG */
+  image-rendering:auto;
+  display:block;
+}
+
+/* Texto */
+.servicio b{font-size:1.3rem}
+.servicio small{opacity:.8}
+
+/* Responsive */
+@media (max-width:700px){
+  .iconos{grid-template-columns:1fr; gap:18px;}
+  .servicio .icono-badge{width:120px;height:120px}
+  .servicio .icono{width:84px;height:84px}
+}
+
+
+/* CONTACTO */
+.contacto{background:#0cc0df}
+.rejilla-contacto{display:grid;grid-template-columns:1.2fr 1fr;gap:22px}
+.pila{display:grid;gap:14px}
+.fila{display:flex;align-items:center;gap:10px}
+.redes{display:flex;gap:12px}
+.redes a{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;background:#fff;box-shadow:0 6px 16px rgba(0,0,0,.08)}
+.telefono{font-size:1.2rem;font-weight:800}
+
+/* PIE */
+.pie{background:#fede58;text-align:center;padding:14px 10px;color:#666;border-top:4px solid var(--amarillo)}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .rejilla{grid-template-columns:1fr}
+  .rejilla-contacto{grid-template-columns:1fr}
+  .iconos{grid-template-columns:1fr;gap:18px}
+  .imagen-fondo{height:320px}
+  .menu{gap:12px}
+}

@@ -1,0 +1,155 @@
+<!-- =========================
+     Archivo: index.html
+     Proyecto: JOMAPER S.A. de C.V.
+     Nota: Este HTML usa clases en español y referencia styles.css
+========================= -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JOMAPER S.A. de C.V.</title>
+  <meta name="description" content="Estacionamiento público, pensiones y autolavado en Roma Sur, CDMX." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Nunito:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- BARRA SUPERIOR / NAV -->
+  <div class="barra-superior">
+    <div class="contenedor navegacion">
+      <div class="marca">
+        <img src="/img/logo.png" alt="JOMAPER" onerror="this.style.display='none'">
+      </div>
+      <nav class="menu">
+        <a href="#inicio">inicio</a>
+        <a href="#nosotros">nosotros</a>
+        <a href="#servicios">servicios</a>
+        <a href="#contacto">contacto</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- PORTADA / HERO -->
+  <header id="inicio" class="portada">
+    <img class="imagen-fondo" src="/img/portada.png" alt="Estacionamiento JOMAPER" />
+    <div class="velo"></div>
+    <div class="envoltura-titulo">
+      <div class="titulo">
+        <h1>JO<br>MA<br>PER</h1>
+      </div>
+    </div>
+  </header>
+
+  <div class="cinta" aria-hidden="true"></div>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="seccion nosotros">
+    <div class="contenedor">
+      <h2 id="titulo_nosotros">NOSOTROS</h2>
+      <div class="rejilla">
+        <div class="tarjeta">
+          <img src="/img/fachada.png" alt="Fachada del estacionamiento" />
+        </div>
+        <p>
+          La empresa JOMAPER fue fundada en enero del año 2024 por los hermanos José y Martín Pérez, con el objetivo de ofrecer soluciones eficientes y confiables en el servicio de estacionamiento dentro de la Ciudad de México. El negocio surgió a partir de la necesidad observada en la colonia Roma Sur, una zona con alta afluencia vehicular y limitada oferta de espacios seguros para estacionar. Al notar esta oportunidad, los fundadores decidieron emprender con un modelo de negocio sencillo, pero centrado en la atención al cliente y la seguridad de los vehículos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cinta" aria-hidden="true"></div>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="seccion servicios">
+  <div class="contenedor">
+    <h2>SERVICIOS</h2>
+    <div class="iconos">
+
+      <div class="servicio">
+        <div class="icono-badge">
+          <img class="icono"
+               src="/img/map-pointer_10317148.png"
+               srcset="assets/estacionamiento@2x.png 2x, assets/estacionamiento@3x.png 3x"
+               alt="Estacionamiento público">
+        </div>
+        <div><b>Estacionamiento</b><br><small>público</small></div>
+      </div>
+
+      <div class="servicio">
+        <div class="icono-badge">
+          <img class="icono"
+               src="/img/parking_3393667.png"
+               srcset="assets/pensiones@2x.png 2x, assets/pensiones@3x.png 3x"
+               alt="Pensiones">
+        </div>
+        <div><b>pensiones</b></div>
+      </div>
+
+      <div class="servicio">
+        <div class="icono-badge">
+          <img class="icono"
+               src="/img/professional_16435412.png"
+               srcset="assets/autolavado@2x.png 2x, assets/autolavado@3x.png 3x"
+               alt="Autolavado">
+        </div>
+        <div><b>autolavado</b></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <div class="cinta" aria-hidden="true"></div>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="seccion contacto">
+    <div class="contenedor">
+      <h2>CONTACTO</h2>
+      <div class="rejilla-contacto">
+        <div class="tarjeta">
+          <iframe title="Mapa JOMAPER" width="100%" height="340" style="border:0;border-radius:10px" loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=C.+Baj%C3%ADo+303,+Roma+Sur,+Cuauht%C3%A9moc,+06760+Ciudad+de+M%C3%A9xico&output=embed"></iframe>
+        </div>
+        <div class="pila">
+          <div class="tarjeta">
+            <div class="fila">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s7-7.582 7-12a7 7 0 10-14 0c0 4.418 7 12 7 12z" stroke="#072a31" stroke-width="1.6"/><circle cx="12" cy="10" r="3" stroke="#072a31" stroke-width="1.6"/></svg>
+              <div>
+                <b>C. Bajío 303, Roma Sur, Cuauhtémoc, 06760</b><br>
+                Ciudad de México, CDMX
+              </div>
+            </div>
+          </div>
+          <div class="tarjeta">
+            <div class="fila">
+              <img src="/icons/phone_enabled_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Estacionamiento">
+              <div class="telefono">5571612569</div>
+            </div>
+          </div>
+          <div class="fila redes">
+            <a aria-label="Facebook" href="#" target="_blank" rel="noopener">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12a10 10 0 10-11.6 9.9v-7h-2.2V12h2.2V9.8c0-2.2 1.3-3.4 3.3-3.4.96 0 1.96.17 1.96.17v2.2h-1.1c-1.08 0-1.42.67-1.42 1.35V12h2.4l-.38 2.9h-2.02v7A10 10 0 0022 12z" fill="#1877F2"/></svg>
+            </a>
+            <a aria-label="Instagram" href="#" target="_blank" rel="noopener">
+              <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f58529"/><stop offset="50%" stop-color="#dd2a7b"/><stop offset="100%" stop-color="#8134af"/></linearGradient><rect rx="5" width="22" height="22" fill="url(#g)"/><g fill="#fff" transform="translate(3 3)"><rect x="10.5" y="1.5" width="2" height="2" rx="1"/><path d="M8 2.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zm0 9a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/></g></svg>
+            </a>
+            <a aria-label="WhatsApp" href="#" target="_blank" rel="noopener">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48a11.5 11.5 0 00-16.27 0A11.5 11.5 0 003.3 17.5L2 22l4.6-1.2a11.5 11.5 0 0013.92-17.32z" stroke="#1FAF38" stroke-width="1.3" fill="#fff"/><path d="M16.8 14.1c-.2.56-1.18 1.1-1.6 1.1-.42 0-1.06-.15-2.05-.63-1.72-.83-2.83-2.47-2.92-2.59-.1-.13-.7-.94-.7-1.8 0-.85.43-1.26.6-1.44.16-.17.36-.21.48-.21h.34c.1 0 .25 0 .38.3.12.3.4 1.04.44 1.12.04.08.06.17 0 .28-.06.11-.1.18-.2.3-.1.1-.2.23-.28.31-.1.08-.2.17-.1.34.1.17.44.74.95 1.2.65.58 1.2.77 1.37.85.16.08.26.07.36-.04.1-.1.42-.49.54-.66.11-.17.23-.14.38-.08.15.06.95.45 1.12.53.17.08.28.12.32.19.03.08.03.59-.16 1.15z" fill="#1FAF38"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pie">
+    © 2025 JOMAPER S.A. de C.V. | Todos los derechos reservados.
+  </footer>
+</body>
+</html>
+
+
