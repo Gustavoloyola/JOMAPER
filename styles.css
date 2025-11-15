@@ -139,14 +139,14 @@ img {
   }
 }
 
-/* Animación de entrada para cards en móvil */
+/* Animación de entrada para cards en móvil (se usará con clase) */
 @keyframes card-mobile-in {
   0% {
-    transform: translateY(18px);
+    transform: translateY(18px) scale(0.97);
     opacity: 0;
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     opacity: 1;
   }
 }
@@ -345,7 +345,7 @@ img {
 
 /* =========================
    SERVICIOS - VERSIÓN MÓVIL
-   (tarjeta normal debajo del icono)
+   (tarjeta normal debajo del icono + animación al entrar)
 ========================= */
 @media (max-width: 900px) {
   .iconos {
@@ -357,28 +357,33 @@ img {
     position: static; /* ya no flotante */
   }
 
+  /* Estado inicial en móvil: escondida hasta que JS le ponga .card-visible */
   .servicio-card {
     position: relative;
     top: auto;
     left: auto;
     bottom: auto;
-    transform: none;
     width: 100%;
     max-width: 480px;
     margin-top: 16px;
-    opacity: 1;
-    visibility: visible; /* siempre visible en móvil */
-    animation: card-mobile-in 0.4s ease-out;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(18px) scale(0.97);
+  }
+
+  /* Cuando entra al viewport en móvil */
+  .servicio-card.card-visible {
+    animation: card-mobile-in 0.45s ease-out forwards;
   }
 
   .servicio-card-img {
     height: 110px;
   }
 
-  /* Pequeño feedback al tocar en móvil */
-  .servicio:active .servicio-card {
-    transform: translateY(1px);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  /* Boing al tocar la card en móvil */
+  .servicio:active .servicio-card.card-visible {
+    transform: translateY(4px) scale(0.97);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
   }
 }
 

@@ -401,6 +401,40 @@
     © 2025 JOMAPER S.A. de C.V. | Todos los derechos reservados.
   </footer>
 
+  <!-- Animar cards de servicios al entrar en viewport (solo móvil) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Solo aplicar en pantallas pequeñas
+      if (!window.matchMedia('(max-width: 900px)').matches) return;
+
+      var cards = document.querySelectorAll('.servicio-card');
+      if (!cards.length) return;
+
+      // Fallback: si no hay IntersectionObserver, las mostramos directo
+      if (!('IntersectionObserver' in window)) {
+        cards.forEach(function (card) {
+          card.classList.add('card-visible');
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('card-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.35
+      });
+
+      cards.forEach(function (card) {
+        observer.observe(card);
+      });
+    });
+  </script>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
