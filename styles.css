@@ -225,7 +225,7 @@ img {
   gap: 8px;
   text-align: center;
   color: #072a31;
-  position: relative; /* Necesario para las cards flotantes */
+  position: relative; /* Necesario para las cards flotantes en desktop */
   cursor: pointer;
 }
 
@@ -261,10 +261,9 @@ img {
 }
 
 /* =========================
-   CARDS FLOTANTES EN HOVER
+   CARDS FLOTANTES EN HOVER (DESKTOP)
 ========================= */
 
-/* Desktop: card centrada alrededor del icono */
 .servicio-card {
   position: absolute;
   left: 50%;
@@ -317,36 +316,41 @@ img {
   margin-bottom: 0.2rem;
 }
 
-/* Mostrar card al pasar mouse */
+/* Mostrar card al pasar mouse (desktop) */
 .servicio:hover .servicio-card {
   opacity: 1;
   visibility: visible;
 }
 
 /* =========================
-   RESPONSIVE SERVICIOS
+   SERVICIOS - VERSIÓN MÓVIL
+   (tarjeta normal debajo del icono)
 ========================= */
-@media (max-width: 768px) {
-  .iconos {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .servicio-card {
-    top: 120%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 260px;
-  }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 900px) {
   .iconos {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .servicio {
+    position: static; /* ya no flotante */
   }
 
   .servicio-card {
-    width: 90%;
-    top: 130%;
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    max-width: 480px;
+    margin-top: 16px;
+    opacity: 1;
+    visibility: visible; /* siempre visible en móvil */
+  }
+
+  .servicio-card-img {
+    height: 110px;
   }
 }
 
@@ -503,6 +507,13 @@ img {
   }
 }
 
+/* Evitar que el botón tape contenido en móvil */
+@media (max-width: 600px) {
+  body {
+    padding-bottom: 80px;
+  }
+}
+
 /* RESPONSIVE GENERAL */
 @media (max-width: 900px) {
   .portada .imagen-fondo {
@@ -516,11 +527,6 @@ img {
   .rejilla,
   .rejilla-contacto {
     grid-template-columns: 1fr;
-  }
-
-  .iconos {
-    grid-template-columns: 1fr;
-    gap: 18px;
   }
 }
 
