@@ -139,6 +139,18 @@ img {
   }
 }
 
+/* Animación de entrada para cards en móvil */
+@keyframes card-mobile-in {
+  0% {
+    transform: translateY(18px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .portada-caption .lead {
   color: #f5f5f5;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
@@ -237,12 +249,21 @@ img {
   display: grid;
   place-items: center;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Pequeño zoom al icono al pasar el mouse */
+/* Pequeño zoom al icono al pasar el mouse (desktop) */
 .servicio:hover .icono-badge {
   transform: scale(1.07);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
+}
+
+/* Efecto al tocar el icono en móvil */
+@media (max-width: 900px) {
+  .servicio:active .icono-badge {
+    transform: scale(0.96);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+  }
 }
 
 .servicio .icono {
@@ -347,10 +368,17 @@ img {
     margin-top: 16px;
     opacity: 1;
     visibility: visible; /* siempre visible en móvil */
+    animation: card-mobile-in 0.4s ease-out;
   }
 
   .servicio-card-img {
     height: 110px;
+  }
+
+  /* Pequeño feedback al tocar en móvil */
+  .servicio:active .servicio-card {
+    transform: translateY(1px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
   }
 }
 
