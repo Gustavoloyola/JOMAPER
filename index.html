@@ -1,7 +1,7 @@
 <!-- =========================
      Archivo: index.html
      Proyecto: JOMAPER S.A. de C.V.
-     Nota: Este HTML usa clases en español y referencia styles.css
+     Nota: Este HTML usa clases en español, styles.css y Bootstrap 5
 ========================= -->
 <!DOCTYPE html>
 <html lang="es">
@@ -10,19 +10,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JOMAPER S.A. de C.V.</title>
   <meta name="description" content="Estacionamiento público, pensiones y autolavado en Roma Sur, CDMX." />
+
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Nunito:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos propios -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- NAV -->
   <div class="barra-superior">
-    <div class="contenedor navegacion">
-      <div class="marca">
+    <div class="contenedor navegacion d-flex justify-content-between align-items-center">
+      <div class="marca d-flex align-items-center">
         <img src="img/logo.png" alt="JOMAPER" onerror="this.style.display='none'">
       </div>
-      <nav class="menu">
+      <nav class="menu d-flex gap-3 text-uppercase">
         <a href="#inicio">inicio</a>
         <a href="#nosotros">nosotros</a>
         <a href="#servicios">servicios</a>
@@ -31,20 +38,70 @@
     </div>
   </div>
 
-  <!-- PORTADA -->
+  <!-- PORTADA CON CARRUSEL -->
   <header id="inicio" class="portada">
-    <img class="imagen-fondo" src="img/portada.png" alt="Estacionamiento JOMAPER" />
-    <div class="velo"></div>
-    <div class="envoltura-titulo">
-      <div class="titulo">
-        <h1>JO<br>MA<br>PER</h1>
+    <div id="portadaCarousel" class="carousel slide" data-bs-ride="carousel">
+      <!-- Indicadores -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#portadaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#portadaCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#portadaCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
+
+      <div class="carousel-inner">
+        <!-- Slide 1: JO MA PER -->
+        <div class="carousel-item active portada-slide">
+          <img class="d-block w-100 imagen-fondo" src="img/portada.png" alt="Estacionamiento JOMAPER">
+          <div class="velo"></div>
+
+          <div class="carousel-caption portada-caption d-flex flex-column justify-content-center align-items-start">
+            <h1 class="titulo-animada">
+              <span>JO</span>
+              <span>MA</span>
+              <span>PER</span>
+            </h1>
+            <p class="mt-3 lead">
+              Estacionamiento público y pensiones en el corazón de Roma Sur.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img class="d-block w-100 imagen-fondo" src="img/fachada.png" alt="Fachada del estacionamiento JOMAPER">
+          <div class="velo"></div>
+          <div class="carousel-caption d-flex flex-column justify-content-center">
+            <h2 class="fw-bold">Espacios seguros y vigilados</h2>
+            <p>Tu auto protegido en una zona de alta afluencia vehicular.</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img class="d-block w-100 imagen-fondo" src="img/portada.png" alt="Autolavado JOMAPER">
+          <div class="velo"></div>
+          <div class="carousel-caption d-flex flex-column justify-content-center">
+            <h2 class="fw-bold">Autolavado profesional</h2>
+            <p>Cuidamos tu vehículo mientras tú cuidas tu tiempo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controles -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#portadaCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#portadaCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
     </div>
   </header>
 
   <div class="cinta" aria-hidden="true"></div>
 
-  <!-- NOSOTROS -->
+  <!-- NOSOTROS (layout original con grid) -->
   <section id="nosotros" class="seccion nosotros">
     <div class="contenedor">
       <h2 id="titulo_nosotros">NOSOTROS</h2>
@@ -61,37 +118,155 @@
 
   <div class="cinta" aria-hidden="true"></div>
 
-<!-- SERVICIOS -->
-<section id="servicios" class="seccion servicios">
-  <div class="contenedor">
-    <h2>SERVICIOS</h2>
-    <div class="iconos">
+  <!-- SERVICIOS -->
+  <section id="servicios" class="seccion servicios">
+    <div class="contenedor">
+      <h2>SERVICIOS</h2>
+      <div class="iconos">
 
-      <div class="servicio">
-        <div class="icono-badge">
-          <img class="icono"
-               src="img/map-pointer_10317148.png"
-               alt="Estacionamiento público">
+        <div class="servicio">
+          <div class="icono-badge">
+            <img class="icono"
+                 src="img/map-pointer_10317148.png"
+                 alt="Estacionamiento público">
+          </div>
+          <div><b>Estacionamiento</b><br><small>público</small></div>
         </div>
-        <div><b>Estacionamiento</b><br><small>público</small></div>
+
+        <div class="servicio">
+          <div class="icono-badge">
+            <img class="icono"
+                 src="img/parking_3393667.png"
+                 alt="Pensiones">
+          </div>
+          <div><b>pensiones</b></div>
+        </div>
+
+        <div class="servicio">
+          <div class="icono-badge">
+            <img class="icono"
+                 src="img/professional_16435412.png"
+                 alt="Autolavado">
+          </div>
+          <div><b>autolavado</b></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="cinta" aria-hidden="true"></div>
+
+<!-- =========================
+     Sección: Bolsa de trabajo
+========================= -->
+<section id="bolsa-trabajo" class="py-5 bg-light">
+  <div class="container">
+    <div class="row mb-4 text-center">
+      <div class="col">
+        <h2 class="section-title mb-2">BOLSA DE TRABAJO</h2>
+        <p class="section-subtitle mb-0">
+          Únete al equipo de JOMAPER S.A. de C.V. y forma parte de un servicio confiable y profesional.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4 align-items-stretch">
+      
+      <!-- Columna izquierda -->
+      <div class="col-md-5">
+        <div class="card h-100 shadow-sm job-docs-card">
+          <div class="card-body">
+            <h3 class="h5 mb-3">Documentos necesarios</h3>
+            <p class="small text-muted mb-3">
+              Antes de acudir a entrevista, prepara la siguiente documentación:
+            </p>
+
+            <ul class="list-unstyled job-docs-list">
+              <li>• Solicitud de empleo elaborada</li>
+              <li>• Identificación oficial (INE o equivalente)</li>
+              <li>• Comprobante de domicilio reciente</li>
+              <li>• Comprobante de estudios</li>
+              <li>• CURP</li>
+              <li>• RFC (si cuentas con él)</li>
+              <li>• 2 referencias laborales o personales</li>
+              <li>• 2 fotografías tamaño infantil (recientes)</li>
+            </ul>
+
+            <hr class="my-3">
+
+            <p class="small mb-1 fw-semibold">Horarios sugeridos:</p>
+            <p class="small mb-2">
+              Lunes a viernes de <strong>10:00 a 14:00</strong> y <strong>16:00 a 18:00</strong>.
+            </p>
+
+            <p class="small mb-0">
+              <strong>Dirección:</strong> Roma Sur, Ciudad de México<br>
+              <strong>Teléfono:</strong> (55) 0000 0000
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="servicio">
-        <div class="icono-badge">
-          <img class="icono"
-               src="img/parking_3393667.png"
-               alt="Pensiones">
-        </div>
-        <div><b>pensiones</b></div>
-      </div>
+      <!-- Columna derecha - FORMULARIO -->
+      <div class="col-md-7">
+        <div class="card h-100 shadow-sm job-form-card">
+          <div class="card-body">
+            <h3 class="h5 mb-3">Envíanos tu información</h3>
+            <p class="small text-muted mb-4">
+              Completa el formulario y te contactaremos lo antes posible.
+            </p>
 
-      <div class="servicio">
-        <div class="icono-badge">
-          <img class="icono"
-               src="img/professional_16435412.png"
-               alt="Autolavado">
+            <!-- FORMULARIO CON FORM SUBMIT -->
+            <form
+              id="form-bolsa-trabajo"
+              action="https://formsubmit.co/gustavoi.loyola@outlook.com"
+              method="POST"
+            >
+
+              <!-- Opciones ocultas -->
+              <input type="hidden" name="_subject" value="Nueva solicitud de empleo - JOMAPER">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+
+              <div class="row g-3">
+
+                <div class="col-md-6">
+                  <label class="form-label">Nombre(s)</label>
+                  <input type="text" name="nombre" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Apellidos</label>
+                  <input type="text" name="apellidos" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Teléfono</label>
+                  <input type="text" name="telefono" maxlength="10" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Correo electrónico</label>
+                  <input type="email" name="correo" class="form-control" required>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label">Mensaje</label>
+                  <textarea name="mensaje" rows="4" class="form-control" required></textarea>
+                </div>
+
+                <div class="col-12 d-flex justify-content-end">
+                  <button type="submit" class="btn btn-primary px-4">
+                    Enviar solicitud
+                  </button>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
         </div>
-        <div><b>autolavado</b></div>
       </div>
 
     </div>
@@ -99,9 +274,12 @@
 </section>
 
 
-  <div class="cinta" aria-hidden="true"></div>
 
-  <!-- CONTACTO -->
+<div class="cinta" aria-hidden="true"></div>
+
+
+
+  <!-- CONTACTO (layout original con grid) -->
   <section id="contacto" class="seccion contacto">
     <div class="contenedor">
       <h2>CONTACTO</h2>
@@ -123,8 +301,8 @@
           </div>
           <div class="tarjeta">
             <div class="fila">
-              <img src="icons/phone_enabled_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Estacionamiento">
-              <div class="telefono">5571612569</div>
+              <img src="icons/phone_enabled_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Teléfono JOMAPER">
+              <div class="telefono">55 7161 2569</div>
             </div>
           </div>
           <div class="fila redes">
@@ -146,7 +324,8 @@
   <footer class="pie">
     © 2025 JOMAPER S.A. de C.V. | Todos los derechos reservados.
   </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
