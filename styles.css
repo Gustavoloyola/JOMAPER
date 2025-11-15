@@ -201,7 +201,9 @@ img {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
 }
 
-/* SERVICIOS */
+/* =========================
+   SERVICIOS – ESTILO BASE
+========================= */
 .servicios {
   background: #0cc0df;
 }
@@ -223,6 +225,8 @@ img {
   gap: 8px;
   text-align: center;
   color: #072a31;
+  position: relative; /* Necesario para las cards flotantes */
+  cursor: pointer;
 }
 
 .servicio .icono-badge {
@@ -233,6 +237,12 @@ img {
   display: grid;
   place-items: center;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+/* Pequeño zoom al icono al pasar el mouse */
+.servicio:hover .icono-badge {
+  transform: scale(1.07);
 }
 
 .servicio .icono {
@@ -250,11 +260,99 @@ img {
   opacity: 0.8;
 }
 
+/* =========================
+   CARDS FLOTANTES EN HOVER
+========================= */
+
+/* Desktop: card centrada alrededor del icono */
+.servicio-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  max-width: 90vw;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  padding: 1rem 1.2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease-out;
+  z-index: 10;
+  border: 3px solid #0cc0df; /* Color corporativo */
+}
+
+/* Imagen interior */
+.servicio-card-img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Títulos y texto */
+.servicio-card h3 {
+  font-size: 1.05rem;
+  color: #072a31;
+  margin-bottom: 0.3rem;
+}
+
+.servicio-card p {
+  font-size: 0.85rem;
+  color: #072a31;
+  margin-bottom: 0.4rem;
+}
+
+.servicio-card ul {
+  margin: 0;
+  padding-left: 1rem;
+  font-size: 0.85rem;
+  color: #072a31;
+}
+
+.servicio-card li {
+  margin-bottom: 0.2rem;
+}
+
+/* Mostrar card al pasar mouse */
+.servicio:hover .servicio-card {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =========================
+   RESPONSIVE SERVICIOS
+========================= */
+@media (max-width: 768px) {
+  .iconos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .servicio-card {
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .iconos {
+    grid-template-columns: 1fr;
+  }
+
+  .servicio-card {
+    width: 90%;
+    top: 130%;
+  }
+}
 
 /* =========================
    Bolsa de trabajo - JOMAPER
 ========================= */
-
 #bolsa-trabajo {
   scroll-margin-top: 80px;
   background-color: #00C5E0 !important; /* Turquesa JOMAPER */
@@ -293,13 +391,6 @@ img {
   border-radius: 999px;
   font-weight: 500;
 }
-
-
-
-
-
-
-
 
 /* CONTACTO */
 .contacto {
@@ -352,7 +443,67 @@ img {
   border-top: 4px solid var(--amarillo, #fede58);
 }
 
-/* RESPONSIVE */
+/* =========================
+   BOTÓN STICKY WHATSAPP
+========================= */
+.btn-whatsapp-sticky {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #25d366; /* Verde WhatsApp */
+  color: #ffffff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn-whatsapp-sticky:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+  background: #1ebe5d;
+}
+
+.btn-whatsapp-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-whatsapp-texto {
+  line-height: 1.1;
+}
+
+/* En móvil: más compacto */
+@media (max-width: 480px) {
+  .btn-whatsapp-sticky {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .btn-whatsapp-texto strong {
+    display: block;
+  }
+}
+
+/* RESPONSIVE GENERAL */
 @media (max-width: 900px) {
   .portada .imagen-fondo {
     height: 320px;
