@@ -137,7 +137,7 @@
           <div class="icono-badge">
             <img src="img/map-pointer_10317148.png" class="icono">
           </div>
-          <b>Estacionamiento</b><br><small>público</small>
+          <b>Estacionamiento<br>público</b></b>
 
           <div class="servicio-card">
             <img src="img/estacionamiento.jpeg" class="servicio-card-img">
@@ -194,68 +194,105 @@
   <!-- BOLSA DE TRABAJO -->
   <section id="bolsa-trabajo" class="py-5 bg-light">
     <div class="container">
-      <h2 class="text-center section-title">BOLSA DE TRABAJO</h2>
-      <p class="text-center mb-4">Únete al equipo de JOMAPER S.A. de C.V.</p>
+      <div class="row mb-4 text-center">
+        <div class="col">
+          <h2 class="section-title mb-2">BOLSA DE TRABAJO</h2>
+          <p class="section-subtitle mb-0">
+            Únete al equipo de JOMAPER S.A. de C.V. y forma parte de un servicio confiable y profesional.
+          </p>
+        </div>
+      </div>
 
-      <div class="row g-4">
-
-        <!-- Documentos -->
+      <div class="row g-4 align-items-stretch">
+        
+        <!-- Columna izquierda -->
         <div class="col-md-5">
-          <div class="card job-docs-card">
+          <div class="card h-100 shadow-sm job-docs-card">
             <div class="card-body">
-              <h3 class="h5">Documentos necesarios</h3>
-              <ul class="job-docs-list">
+              <h3 class="h5 mb-3">Documentos necesarios</h3>
+              <p class="small text-muted mb-3">
+                Antes de acudir a entrevista, prepara la siguiente documentación:
+              </p>
+
+              <ul class="list-unstyled job-docs-list">
                 <li>• Solicitud de empleo elaborada</li>
-                <li>• Identificación oficial</li>
-                <li>• Comprobante de domicilio</li>
+                <li>• Identificación oficial (INE o equivalente)</li>
+                <li>• Comprobante de domicilio reciente</li>
+                <li>• Comprobante de estudios</li>
                 <li>• CURP</li>
-                <li>• RFC</li>
-                <li>• Fotografías recientes</li>
+                <li>• RFC (si cuentas con él)</li>
+                <li>• 2 referencias laborales o personales</li>
+                <li>• 2 fotografías tamaño infantil (recientes)</li>
               </ul>
+
+              <hr class="my-3">
+
+              <p class="small mb-1 fw-semibold">Horarios sugeridos:</p>
+              <p class="small mb-2">
+                Lunes a viernes de <strong>10:00 a 14:00</strong> y <strong>16:00 a 18:00</strong>.
+              </p>
+
+              <p class="small mb-0">
+                <strong>Dirección:</strong> Roma Sur, Ciudad de México<br>
+                <strong>Teléfono:</strong> (55) 0000 0000
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- Formulario -->
+        <!-- Columna derecha - FORMULARIO -->
         <div class="col-md-7">
-          <div class="card job-form-card">
+          <div class="card h-100 shadow-sm job-form-card">
             <div class="card-body">
+              <h3 class="h5 mb-3">Envíanos tu información</h3>
+              <p class="small text-muted mb-4">
+                Completa el formulario y te contactaremos lo antes posible.
+              </p>
 
-              <h3 class="h5">Envíanos tu información</h3>
-
-              <form action="https://formspree.io/f/xrbrqorz" method="POST">
+              <!-- FORMULARIO FORMspree -->
+              <form
+                id="form-bolsa-trabajo"
+                action="https://formspree.io/f/xrbrqorz"
+                method="POST"
+              >
 
                 <div class="row g-3">
-
                   <div class="col-md-6">
                     <label class="form-label">Nombre(s)</label>
-                    <input name="nombre" class="form-control" required>
+                    <input type="text" name="nombre" class="form-control" required>
                   </div>
 
                   <div class="col-md-6">
                     <label class="form-label">Apellidos</label>
-                    <input name="apellidos" class="form-control" required>
+                    <input type="text" name="apellidos" class="form-control" required>
                   </div>
 
                   <div class="col-md-6">
                     <label class="form-label">Teléfono</label>
-                    <input name="telefono" class="form-control" required>
+                    <input
+                      type="tel"
+                      name="telefono"
+                      class="form-control"
+                      id="telefono"
+                      required
+                    >
                   </div>
 
                   <div class="col-md-6">
-                    <label class="form-label">Correo</label>
+                    <label class="form-label">Correo electrónico</label>
                     <input type="email" name="correo" class="form-control" required>
                   </div>
 
                   <div class="col-12">
                     <label class="form-label">Mensaje</label>
-                    <textarea name="mensaje" class="form-control" rows="4" required></textarea>
+                    <textarea name="mensaje" rows="4" class="form-control" required></textarea>
                   </div>
 
-                  <div class="col-12 text-end">
-                    <button class="btn btn-primary px-4">Enviar</button>
+                  <div class="col-12 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary px-4">
+                      Enviar solicitud
+                    </button>
                   </div>
-
                 </div>
 
               </form>
@@ -268,37 +305,56 @@
     </div>
   </section>
 
+  <div class="cinta" aria-hidden="true"></div>
   <div class="cinta"></div>
 
   <!-- CONTACTO -->
   <section id="contacto" class="seccion contacto">
     <div class="contenedor">
       <h2>CONTACTO</h2>
-
       <div class="rejilla-contacto">
         <div class="tarjeta">
-          <iframe
-            width="100%" height="340" style="border:0;border-radius:10px"
-            src="https://www.google.com/maps?q=Roma+Sur+CDMX&output=embed">
-          </iframe>
+          <iframe title="Mapa JOMAPER" width="100%" height="340" style="border:0;border-radius:10px" loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=C.+Baj%C3%ADo+303,+Roma+Sur,+Cuauht%C3%A9moc,+06760+Ciudad+de+M%C3%A9xico&output=embed"></iframe>
         </div>
-
         <div class="pila">
           <div class="tarjeta">
-            <b>Dirección:</b><br>
-            C. Bajío 303, Roma Sur
+            <div class="fila">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22s7-7.582 7-12a7 7 0 10-14 0c0 4.418 7 12 7 12z" stroke="#072a31" stroke-width="1.6"/>
+                <circle cx="12" cy="10" r="3" stroke="#072a31" stroke-width="1.6"/>
+              </svg>
+              <div>
+                <b>C. Bajío 303, Roma Sur, Cuauhtémoc, 06760</b><br>
+                Ciudad de México, CDMX
+              </div>
+            </div>
           </div>
-
           <div class="tarjeta">
-            <b>Teléfono:</b><br>
-            55 7161 2569
+            <div class="fila">
+              <img src="icons/phone_enabled_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="Teléfono JOMAPER">
+              <div class="telefono">55 7161 2569</div>
+            </div>
+          </div>
+          <div class="fila redes">
+            <a aria-label="Facebook" href="#" target="_blank" rel="noopener">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12a10 10 0 10-11.6 9.9v-7h-2.2V12h2.2V9.8c0-2.2 1.3-3.4 3.3-3.4.96 0 1.96.17 1.96.17v2.2h-1.1c-1.08 0-1.42.67-1.42 1.35V12h2.4l-.38 2.9h-2.02v7A10 10 0 0022 12z" fill="#1877F2"/></svg>
+            </a>
+            <a aria-label="Instagram" href="#" target="_blank" rel="noopener">
+              <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f58529"/><stop offset="50%" stop-color="#dd2a7b"/><stop offset="100%" stop-color="#8134af"/></linearGradient><rect rx="5" width="22" height="22" fill="url(#g)"/><g fill="#fff" transform="translate(3 3)"><rect x="10.5" y="1.5" width="2" height="2" rx="1"/><path d="M8 2.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zm0 9a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/></g></svg>
+            </a>
+            <a aria-label="WhatsApp" href="https://wa.me/525571612569" target="_blank" rel="noopener">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.52 3.48a11.5 11.5 0 00-16.27 0A11.5 11.5 0 003.3 17.5L2 22l4.6-1.2a11.5 11.5 0 0013.92-17.32z" stroke="#1FAF38" stroke-width="1.3" fill="#fff"/>
+                <path d="M16.8 14.1c-.2.56-1.18 1.1-1.6 1.1-.42 0-1.06-.15-2.05-.63-1.72-.83-2.83-2.47-2.92-2.59-.1-.13-.7-.94-.7-1.8 0-.85.43-1.26.6-1.44.16-.17.36-.21.48-.21h.34c.1 0 .25 0 .38.3.12.3.4 1.04.44 1.12.04.08.06.17 0 .28-.06.11-.1.18-.2.3-.1.1-.2.23-.28.31-.1.08-.2.17-.1.34.1.17.44.74.95 1.2.65.58 1.2.77 1.37.85.16.08.26.07.36-.04.1-.1.42-.49.54-.66.11-.17.23-.14.38-.08.15.06.95.45 1.12.53.17.08.28.12.32.19.03.08.03.59-.16 1.15z" fill="#1FAF38"/>
+              </svg>
+            </a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
-
   <!-- WhatsApp -->
   <a class="btn-whatsapp-sticky" href="https://wa.me/525571612569" target="_blank">
     <div class="btn-whatsapp-icon">
