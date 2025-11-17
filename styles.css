@@ -28,13 +28,16 @@ img {
   padding: 0 16px;
 }
 
-/* NAV */
+/* NAV base */
 .barra-superior {
   background: #fede58;
 }
 
 .navegacion {
   padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .marca {
@@ -49,6 +52,45 @@ img {
   border-radius: 6px;
 }
 
+/* Botón menú (oculto en desktop) */
+.btn-menu {
+  display: none;
+  background: transparent;
+  border: 2px solid #072a31;
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn-menu span {
+  display: block;
+  width: 22px;
+  height: 3px;
+  background: #072a31;
+  border-radius: 999px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-menu span + span {
+  margin-top: 4px;
+}
+
+/* Estado X (menú abierto) */
+.btn-menu.abierto span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.btn-menu.abierto span:nth-child(2) {
+  opacity: 0;
+}
+.btn-menu.abierto span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Menú desktop */
 .menu {
   display: flex;
   gap: 22px;
@@ -571,10 +613,6 @@ img {
     height: 320px;
   }
 
-  .menu {
-    gap: 12px;
-  }
-
   .rejilla,
   .rejilla-contacto {
     grid-template-columns: 1fr;
@@ -595,35 +633,49 @@ img {
     font-size: 0.9rem;
   }
 }
-/* NAV responsive: acomodo para celular */
+
+/* ===== NAV MÓVIL: overlay tipo CUSAEM ===== */
 @media (max-width: 768px) {
   .navegacion {
-    flex-direction: column;              /* logo arriba, menú abajo   */
-    align-items: flex-start !important;
-    justify-content: center !important;
     padding: 8px 0;
-    gap: 6px;
   }
 
   .marca img {
-    height: 26px;                        /* logo un poquito más chico */
+    height: 30px;
   }
 
+  /* el botón SÍ se ve en móvil */
+  .btn-menu {
+    display: inline-flex;
+  }
+
+  /* el menú pasa a overlay oculto por defecto */
   .menu {
-    width: 100%;
-    flex-wrap: wrap;                     /* que los enlaces puedan dar salto */
-    gap: 6px 14px;                       /* fila / columna */
-    justify-content: flex-start;
+    position: fixed;
+    inset: 72px 0 0 0;          /* debajo de la barra amarilla */
+    background: #fede58;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 24px 32px;
+    gap: 18px;
+    transform: translateY(-100%);
+    transition: transform 0.25s ease-out;
+    z-index: 900;
   }
 
   .menu a {
-    font-size: 0.85rem;                  /* letra un poco más pequeña */
+    font-size: 1.1rem;
+  }
+
+  /* cuando esté abierto */
+  .menu.menu-abierto {
+    transform: translateY(0);
   }
 }
 
-/* Extra compacto para teléfonos muy pequeños */
+/* extra pequeño */
 @media (max-width: 480px) {
   .menu a {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
