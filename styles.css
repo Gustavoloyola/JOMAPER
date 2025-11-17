@@ -158,6 +158,24 @@ img {
   font-weight: 400;
 }
 
+/* ============================================
+   EFECTO ZOOM (KEN BURNS) PARA CARRUSEL
+============================================ */
+.portada .carousel-item .imagen-fondo {
+  transform: scale(1);
+  transition: transform 8s ease-out;
+}
+
+.portada .carousel-item.active .imagen-fondo {
+  transform: scale(1.15);   /* nivel de zoom */
+}
+
+/* Mejora para suavizar el movimiento */
+.portada .carousel-item .imagen-fondo {
+  will-change: transform;
+}
+
+
 /* FRANJA AMARILLA */
 .cinta {
   height: 40px;
