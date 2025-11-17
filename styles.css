@@ -28,6 +28,16 @@ img {
   padding: 0 16px;
 }
 
+/* Offset para anclas, para que la barra amarilla no tape los títulos */
+#inicio,
+#nosotros,
+#servicios,
+#bolsa-trabajo,
+#contacto {
+  scroll-margin-top: 80px;
+}
+
+
 /* NAV base */
 .barra-superior {
   background: #fede58;
@@ -55,42 +65,60 @@ img {
   border-radius: 6px;
 }
 
-/* Botón menú (escondido en desktop por defecto) */
+/* =========================
+   BOTÓN MENÚ (HAMBURGUESA)
+========================= */
+
 .btn-menu {
-  display: none;              /* en desktop no se ve */
-  background: transparent;
+  display: none;               /* se activa solo en móvil */
+  background: #fede58;
   border: 2px solid #072a31;
-  border-radius: 10px;
+  border-radius: 12px;
   width: 44px;
   height: 44px;
   padding: 0;
+  cursor: pointer;
+  position: relative;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 
+/* Las 3 líneas */
 .btn-menu span {
-  display: block;
-  width: 22px;
+  position: absolute;
+  left: 50%;
+  width: 24px;                 /* largo de las líneas */
   height: 3px;
   background: #072a31;
   border-radius: 999px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transform: translateX(-50%);
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.btn-menu span + span {
-  margin-top: 4px;
+/* Posiciones: arriba, centro y abajo (centradas en el botón) */
+.btn-menu span:nth-child(1) {
+  top: 16px;
+}
+.btn-menu span:nth-child(2) {
+  top: 22px;
+}
+.btn-menu span:nth-child(3) {
+  top: 28px;
 }
 
-/* Estado X (menú abierto) */
+/* Estado X (menú abierto) – centrado exacto */
 .btn-menu.abierto span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  top: 22px;
+  transform: translateX(-50%) rotate(45deg);
 }
+
 .btn-menu.abierto span:nth-child(2) {
   opacity: 0;
 }
+
 .btn-menu.abierto span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  top: 22px;
+  transform: translateX(-50%) rotate(-45deg);
 }
 
 /* Menú desktop */
@@ -184,7 +212,7 @@ img {
   }
 }
 
-/* Animación de entrada para cards en móvil (se usará con clase) */
+/* Animación de entrada para cards en móvil */
 @keyframes card-mobile-in {
   0% {
     transform: translateY(18px) scale(0.97);
@@ -608,7 +636,7 @@ img {
   }
 }
 
-/* NAV MÓVIL: overlay tipo CUSAEM */
+/* NAV MÓVIL: overlay */
 @media (max-width: 768px) {
   .marca img {
     height: 30px;
